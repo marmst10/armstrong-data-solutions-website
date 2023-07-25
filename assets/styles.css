@@ -1,0 +1,6 @@
+/* Add a box around the active link in the navbar */
+.navbar .nav-item .nav-link.active {
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
