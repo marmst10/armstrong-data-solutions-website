@@ -36,7 +36,7 @@ text3 = dcc.Markdown(
     ##### Automation
     
     - Automate repetitive tasks
-    - Increase efficiency & profitabilitiy
+    - Increase efficiency & profitability
     """
 )
 text4 = dcc.Markdown(
