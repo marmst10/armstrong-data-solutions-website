@@ -1,16 +1,13 @@
 import warnings
+warnings.simplefilter(action="ignore", category=FutureWarning)
 
 import dash
 from dash import html, dcc
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
-
 import plotly.io as pio
-
 import footer
 from navigation import create_navbar
-
-warnings.simplefilter(action="ignore", category=FutureWarning)
 
 pio.templates.default = "plotly_dark"
 
@@ -88,6 +85,7 @@ app.clientside_callback(
     Output("store", "data"),
     Input("store", "data"),
 )
+
 
 
 if __name__ == "__main__":
