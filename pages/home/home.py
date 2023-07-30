@@ -19,45 +19,52 @@ dash.register_page(
 
 text1 = dcc.Markdown(
     """
-    Looking for a smart solution? Armstrong Data Solutions can help your business.
-    """
+    ##### Looking for a smart solution? **Armstrong Data Solutions** can help your business.
+    """, style={'text-align': 'center'}
 )
 text2 = dcc.Markdown(
     """
-    ##### Custom Software Tools
+    ##### **Custom Software Tools**
 
-    - One-click solutions
-    - Applications
-    - Custom reports & visualizations
+    Applications  
+    Custom reports & visualizations  
+    One-click solutions  
     """
 )
 text3 = dcc.Markdown(
     """
-    ##### Automation
+    ##### **Automation**
     
-    - Automate repetitive tasks
-    - Increase efficiency & profitability
+    Automate repetitive tasks  
+    Increase efficiency & profitability
     """
 )
-text4 = dcc.Markdown(
+text5 = dcc.Markdown(
     """
-    *Got questions? Get in touch for a free consultation*
-
+    ##### **Services**
+    
+    Outsource your Data Analysis  
+    Process Optimization  
+    Experimental Design
     """
 )
-
+text4 = dcc.Markdown(                            
+    """
+        *Got questions? [Get in touch](/contact) for a free consultation*
+    """, style={'text-align': 'center'}
+)
+# ,
+    # 
 def layout():
     page = dbc.Container(
         [
-            dbc.Row(dbc.Col(card(text1, centered=True), width=12), align="center",className="mb-4"),
-            dbc.Row([
-                dbc.Col(card(text2), width=6),
-                dbc.Col(card(text3), width=6), 
-                ],
-                className="mb-4"
-                ),
-            dbc.Row(dbc.Col(card(text4, centered=True), width=12), align="center", className="mb-4")
+            dbc.Row(dbc.Col(text1, align="center"),className="mb-4 mt-4"),
+            dbc.Row(dbc.Col(card(text2, centered=True), width=4), justify="center", className="mb-4"),
+            dbc.Row(dbc.Col(card(text3, centered=True), width=4), justify="center", className="mb-4"),
+            dbc.Row(dbc.Col(card(text5, centered=True), width=4), justify="center", className="mb-4"),
+            dbc.Row(dbc.Col(text4, align="center"),style={"margin-bottom":"20"}),
         ],
+        
         class_name="mt-2",
         fluid="md",
     )

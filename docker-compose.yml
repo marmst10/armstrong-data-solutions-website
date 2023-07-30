@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  armstrongdatasolutionswebsite:
+    image: armstrongdatasolutionswebsite
+    build:
+      context: .
+      dockerfile: ./Dockerfile

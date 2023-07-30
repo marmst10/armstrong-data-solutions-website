@@ -11,7 +11,7 @@ warnings.simplefilter(action="ignore", category=FutureWarning)
 
 dash.register_page(
     __name__,
-    path="/solutions/custom-visualizations",
+    path="/examples/custom-visualizations",
     title="Armstrong Data Solutions - Custom Visualizations",
     name="Custom Visualizations",
     description="Custom Visualizations Page",

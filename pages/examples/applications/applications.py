@@ -8,7 +8,7 @@ warnings.simplefilter(action="ignore", category=FutureWarning)
 
 dash.register_page(
     __name__,
-    path="/solutions/applications",
+    path="/examples/applications",
     title="Armstrong Data Solutions - Applications",
     name="Applications",
     description="Applications Page",

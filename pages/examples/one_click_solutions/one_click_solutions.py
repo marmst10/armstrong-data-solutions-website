@@ -11,7 +11,7 @@ warnings.simplefilter(action="ignore", category=FutureWarning)
 
 dash.register_page(
     __name__,
-    path="/solutions/one-click-solutions",
+    path="/examples/one-click-solutions",
     title="Armstrong Data Solutions - One-click Solutions",
     name="One-click Solutions",
     description="One-click Solutions Page",

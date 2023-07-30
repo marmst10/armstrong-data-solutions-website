@@ -8,15 +8,15 @@ warnings.simplefilter(action="ignore", category=FutureWarning)
 
 dash.register_page(
     __name__,
-    path="/solutions/custom-reports",
-    title="Armstrong Data Solutions - Custom Reports",
-    name="Custom Reports",
-    description="Custom Reports Page",
+    path="/examples/task-automation",
+    title="Armstrong Data Solutions - Task Automation",
+    name="Task Automation",
+    description="Task Automation Page",
 )
 
 text1 = dcc.Markdown(
     """
-    This is the custom reports page
+    This is the task automation page
     """
 )
 

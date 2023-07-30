@@ -11,15 +11,15 @@ links = dbc.Row(
                 
                 dbc.DropdownMenu(
                     children=[
-                        dbc.DropdownMenuItem("One-click Solutions", href="/solutions/one-click-solutions", id='one-click-solutions-link'),
-                        dbc.DropdownMenuItem("Applications", href="/solutions/applications", id='applications-link'),
-                        dbc.DropdownMenuItem("Custom Reports", href="/solutions/custom-reports", id='custom-reports-link'),
-                        dbc.DropdownMenuItem("Custom Visualizations", href="/solutions/custom-visualizations", id='custom-visualizations-link'),
-                        dbc.DropdownMenuItem("Task Automation", href="/solutions/task-automation", id='task-automation-link'),
+                        dbc.DropdownMenuItem("One-click Solutions", href="/examples/one-click-solutions", id='one-click-solutions-link'),
+                        # dbc.DropdownMenuItem("Applications", href="/examples/applications", id='applications-link'),
+                        # dbc.DropdownMenuItem("Custom Reports", href="/examples/custom-reports", id='custom-reports-link'),
+                        # dbc.DropdownMenuItem("Custom Visualizations", href="/examples/custom-visualizations", id='custom-visualizations-link'),
+                        # dbc.DropdownMenuItem("Task Automation", href="/examples/task-automation", id='task-automation-link'),
                     ],
                     nav=True,
                     in_navbar=True,
-                    label="Solutions",
+                    label="Examples",
                 )
             ],
             navbar=True,
@@ -58,43 +58,3 @@ def create_navbar(external_stylesheets):
         dark=True,
     )
     return navbar
-
-# navbar = dbc.NavbarSimple(
-#     children=[
-#         dbc.Row(
-#             [
-#                 dbc.Col(
-#                     html.Span(
-#                         [html.Img(src="/assets/icon.png", height="30px", className="mr-2"), "Armstrong Data Solutions"],
-#                         className="navbar-brand"
-#                     ),
-#                     width = "auto"
-#                 ),
-#                 dbc.Col(
-#                     dbc.Nav(
-#                         [
-#                             dbc.NavItem(dbc.NavLink("Home", href="/")),
-#                             dbc.NavItem(dbc.NavLink("Solutions", href="/solutions")),
-#                             dbc.NavItem(dbc.NavLink("Contact", href="/contact")),
-#                             dbc.DropdownMenu(
-#                                 children=[
-#                                     dbc.DropdownMenuItem("Example 1", href="/examples/example1"),
-#                                     dbc.DropdownMenuItem("Example 2", href="/examples/example2"),
-#                                 ],
-#                                 nav=True,
-#                                 in_navbar=True,
-#                                 label="Examples",
-#                             )
-#                         ],
-#                         navbar=True,
-#                     ),
-#                     width=True
-#                 ),
-#             ],
-#             align="center",  # Align the content of the row to the center
-#         ),
-#     ],
-#     brand_href="/",
-#     color="primary",
-#     dark=True,
-# )
