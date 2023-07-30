@@ -49,3 +49,10 @@ body {
   height: 30px; /* Set the fixed height of the footer here */
   line-height: 30px; /* Vertically center the text there */
 }
+
+@media (max-width: 768px) {
+  .custom-card-col {
+      flex-basis: calc(100% - 20px) !important;
+      max-width: calc(100% - 20px) !important;
+  }
+}

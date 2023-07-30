@@ -55,17 +55,50 @@ text4 = dcc.Markdown(
 )
 # ,
     # 
+
+def generate_card(content):
+    return dbc.Col(card(content, centered=True), width={"size": 12, "offset": 0}, xs=10, sm=10, md=6, lg=4, xl=4)
+
 def layout():
     page = dbc.Container(
         [
-            dbc.Row(dbc.Col(text1, align="center"),className="mb-4 mt-4"),
-            dbc.Row(dbc.Col(card(text2, centered=True), width=4), justify="center", className="mb-4"),
-            dbc.Row(dbc.Col(card(text3, centered=True), width=4), justify="center", className="mb-4"),
-            dbc.Row(dbc.Col(card(text5, centered=True), width=4), justify="center", className="mb-4"),
-            dbc.Row(dbc.Col(text4, align="center"),style={"margin-bottom":"20"}),
+            dbc.Row(dbc.Col(text1, align="center"), className="mb-4 mt-4"),
+            dbc.Row(
+                [
+                    generate_card(text2),
+                ],
+                justify="center",
+                className="mb-4",
+            ),
+            dbc.Row(
+                [
+                    generate_card(text3),
+                ],
+                justify="center",
+                className="mb-4",
+            ),
+            dbc.Row(
+                [
+                    generate_card(text5),
+                ],
+                justify="center",
+                className="mb-4",
+            ),
+            dbc.Row(dbc.Col(text4, align="center"), style={"margin-bottom": "20"}),
         ],
-        
         class_name="mt-2",
         fluid="md",
+        style={"padding": "0"},  # Add this style to remove container padding
     )
+
+    # # Add custom CSS to adjust the card width on mobile devices
+    # custom_css = """
+    # @media (max-width: 768px) {
+    #     .custom-card-col {
+    #         flex-basis: calc(100% - 20px) !important;
+    #         max-width: calc(100% - 20px) !important;
+    #     }
+    # }
+    # """
+    # page = html.Div([page, html.Style(custom_css)])
     return page

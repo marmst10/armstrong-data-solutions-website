@@ -9,7 +9,8 @@ def card(text, centered = False):
                     html.Div(text, className='text-center')
                 ]
             ),
-            class_name="h-100"
+            class_name="h-100",
+            # style={"padding-left": "20px", "padding-right": "20px"}
         )
     else:
         card = dbc.Card(
