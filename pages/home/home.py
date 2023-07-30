@@ -57,33 +57,26 @@ text4 = dcc.Markdown(
     # 
 
 def generate_card(content):
-    return dbc.Col(card(content, centered=True), width={"size": 12, "offset": 0}, xs=10, sm=10, md=6, lg=4, xl=4)
+    homecard = dbc.Row(
+        [
+            dbc.Col(
+                card(content, centered=True), 
+                width={"size": 12, "offset": 0}, 
+                xs=10, sm=10, md=6, lg=4, xl=4
+            )
+        ],
+        justify="center",
+        className="mb-4",
+    )
+    return homecard
 
 def layout():
     page = dbc.Container(
         [
             dbc.Row(dbc.Col(text1, align="center"), className="mb-4 mt-4"),
-            dbc.Row(
-                [
-                    generate_card(text2),
-                ],
-                justify="center",
-                className="mb-4",
-            ),
-            dbc.Row(
-                [
-                    generate_card(text3),
-                ],
-                justify="center",
-                className="mb-4",
-            ),
-            dbc.Row(
-                [
-                    generate_card(text5),
-                ],
-                justify="center",
-                className="mb-4",
-            ),
+            generate_card(text2),
+            generate_card(text3),
+            generate_card(text5),
             dbc.Row(dbc.Col(text4, align="center"), style={"margin-bottom": "20"}),
         ],
         class_name="mt-2",
