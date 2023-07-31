@@ -17,11 +17,35 @@ dash.register_page(
     description="Armstrong Data Solutions Website Home Page",
 )
 
-text1 = dcc.Markdown(
-    """
-    ##### Looking for a smart solution? **Armstrong Data Solutions** can help your business.
-    """, style={'text-align': 'center'}
+text1 = html.Div(
+    [
+        dcc.Markdown(
+            """
+            ###### Does manually crunching data drive you nuts?
+            """, 
+            style={'text-align': 'center'}, className="mb-3"
+        ),
+        dcc.Markdown(
+            """
+            ###### Would you like to automate your data analysis?
+            """, 
+            style={'text-align': 'center'}, className="mb-3"
+        ),
+        dcc.Markdown(
+            """
+            ###### Would you like to outsource your data analysis?
+            """, 
+            style={'text-align': 'center'}, className="mb-4"
+        ),
+        dcc.Markdown(
+            """
+            ##### If any of these apply to you, **Armstrong Data Solutions** can help your business.
+            """, 
+            style={'text-align': 'center'}
+        )
+    ]
 )
+
 text2 = dcc.Markdown(
     """
     ##### **Custom Software Tools**
@@ -31,19 +55,13 @@ text2 = dcc.Markdown(
     One-click solutions  
     """
 )
-text3 = dcc.Markdown(
-    """
-    ##### **Automation**
-    
-    Automate repetitive tasks  
-    Increase efficiency & profitability
-    """
-)
+
 text5 = dcc.Markdown(
     """
     ##### **Services**
     
     Outsource your Data Analysis  
+    Automate repetitive tasks  
     Process Optimization  
     Experimental Design
     """
@@ -53,8 +71,6 @@ text4 = dcc.Markdown(
         *Got questions? [Get in touch](/contact) for a free consultation*
     """, style={'text-align': 'center'}
 )
-# ,
-    # 
 
 def generate_card(content):
     homecard = dbc.Row(
@@ -66,22 +82,44 @@ def generate_card(content):
             )
         ],
         justify="center",
-        className="mb-4",
+        className="mb-5",
     )
     return homecard
 
 def layout():
-    page = dbc.Container(
+    page = html.Div(
         [
-            dbc.Row(dbc.Col(text1, align="center"), className="mb-4 mt-4"),
-            generate_card(text2),
-            generate_card(text3),
-            generate_card(text5),
-            dbc.Row(dbc.Col(text4, align="center"), style={"margin-bottom": "20"}),
-        ],
-        class_name="mt-2",
-        fluid="md",
-        style={"padding": "0"},  # Add this style to remove container padding
+            dbc.Container(
+                [
+                    dbc.Row(dbc.Col(text1, align="center"), className="mb-4 mt-4"),
+                ],
+                class_name="mt-2",
+                fluid="md",
+                style={"padding": "0"},  # Add this style to remove container padding
+            ),
+
+            html.Hr(style={"width": "100%"}, className="mb-5"),
+
+            dbc.Container(
+                [
+                    generate_card(text5),
+                    generate_card(text2),
+                ],
+                fluid="md",
+                style={"padding": "0"},  # Add this style to remove container padding
+            ),
+
+            html.Hr(style={"width": "100%"}, className="mt-5"),
+
+            dbc.Container(
+                [
+                    dbc.Row(dbc.Col(text4, align="center"), style={"margin-bottom": "20"}),
+                ],
+                # class_name="mt-5",
+                fluid="md",
+                style={"padding": "0"},  # Add this style to remove container padding
+            )
+        ]
     )
 
     # # Add custom CSS to adjust the card width on mobile devices

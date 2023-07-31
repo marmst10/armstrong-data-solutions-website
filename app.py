@@ -50,20 +50,20 @@ app.layout = html.Div(
     Output('home-link', 'active'),
     Output('contact-link', 'active'),
     Output('one-click-solutions-link', 'active'),
-    Output('applications-link', 'active'),
-    Output('custom-reports-link', 'active'),
-    Output('custom-visualizations-link', 'active'),
-    Output('task-automation-link', 'active'),
+    # Output('applications-link', 'active'),
+    # Output('custom-reports-link', 'active'),
+    # Output('custom-visualizations-link', 'active'),
+    # Output('task-automation-link', 'active'),
     Input('url', 'pathname')
 )
 def update_active_links(pathname):
     home_active = False
     contact_active = False
     one_click_solutions_active = False
-    applications_active = False
-    custom_reports_active = False
-    custom_visualizations_active = False
-    task_automation_active = False
+    # applications_active = False
+    # custom_reports_active = False
+    # custom_visualizations_active = False
+    # task_automation_active = False
 
     if pathname == '/':
         home_active = True
@@ -71,21 +71,16 @@ def update_active_links(pathname):
         contact_active = True
     elif pathname == '/examples/one-click-solutions':
         one_click_solutions_active = True
-    elif pathname == '/examples/applications':
-        applications_active = True
-    elif pathname == '/examples/custom-reports':
-        custom_reports_active = True
-    elif pathname == '/examples/custom-visualizations':
-        custom_visualizations_active = True
-    elif pathname == '/examples/task-automation':
-        task_automation_active = True
+    # elif pathname == '/examples/applications':
+    #     applications_active = True
+    # elif pathname == '/examples/custom-reports':
+    #     custom_reports_active = True
+    # elif pathname == '/examples/custom-visualizations':
+    #     custom_visualizations_active = True
+    # elif pathname == '/examples/task-automation':
+    #     task_automation_active = True
 
-    return home_active, contact_active, one_click_solutions_active, applications_active, custom_reports_active, custom_visualizations_active, task_automation_active
-
-# Define the callback to update the encrypted phone number
-@app.callback(Output('encrypted-phone', 'children'), [Input('phone-store', 'data')])
-def update_encrypted_phone(encrypted_phone):
-    return encrypted_phone
+    return home_active, contact_active, one_click_solutions_active, #applications_active, custom_reports_active, custom_visualizations_active, task_automation_active
 
 
 if __name__ == "__main__":

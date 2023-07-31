@@ -5,8 +5,8 @@ links = dbc.Row(
     dbc.Col(
         dbc.Nav(
             [
-                dbc.NavItem(dbc.NavLink("Home", href="/", id='home-link')),
-                dbc.NavItem(dbc.NavLink("Contact", href="/contact", id='contact-link')),
+                dbc.NavItem(dbc.NavLink("Home", href="/", id='home-link',), style={"padding-right":"10px"}),
+                dbc.NavItem(dbc.NavLink("Contact", href="/contact", id='contact-link'), style={"padding-right":"10px"}),
                 # dbc.NavItem(dbc.NavLink("Solutions", href="/solutions", id='solutions-link')),
                 
                 dbc.DropdownMenu(
@@ -36,8 +36,8 @@ def create_navbar(external_stylesheets):
                     # Use row and col to control vertical alignment of logo / brand
                     dbc.Row(
                         [
-                            dbc.Col(html.Img(src="/assets/icon5.png", height="50px")),
-                            dbc.Col(dbc.NavbarBrand("Armstrong Data Solutions", className="ms-2")),
+                            dbc.Col(html.Img(src="/assets/icon5.png", height="40px"), style={"padding-right":"5px"}),
+                            dbc.Col(dbc.NavbarBrand("Armstrong Data Solutions", className="ms-2"), style={"padding-right":"10px"}),
                         ],
                         align="center",
                         className="g-0",
