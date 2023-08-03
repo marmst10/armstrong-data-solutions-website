@@ -6,7 +6,8 @@ def footer(external_stylesheets):
     return html.Footer(
         dcc.Markdown(
             
-            "**Armstrong Data Solutions**", 
+            # "**Armstrong Data Solutions**", 
+            "**Thanks, Jonathan**", 
             className="footer",
             style={
                 "font-size": "12px", 
